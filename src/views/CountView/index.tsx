@@ -5,8 +5,10 @@ export const CountView = React.memo(() => {
   const { count, addCount } = useCountView();
   return (
     <div>
-      <p className="bg-black">{count}</p>
-      <button onClick={addCount}>カウントアップ</button>
+      <p>{count}</p>
+      <button className="bg-red-500" onClick={addCount}>
+        カウントアップ
+      </button>
     </div>
   );
 });
