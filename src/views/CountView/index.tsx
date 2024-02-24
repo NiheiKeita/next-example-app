@@ -3,7 +3,6 @@ import { useCountView } from "./hooks";
 
 export const CountView = React.memo(() => {
   const { count, addCount } = useCountView();
-  console.log("hello");
   return (
     <div>
       <p data-testid="countText">{count}</p>
