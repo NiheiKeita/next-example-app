@@ -18,5 +18,5 @@ jobs:
           eslint_flags: './**/*.{vue,ts,js}'
           fail_on_error: 'true'
       - name: eslint
-        run: npm lint
+        run: npm run lint
 
