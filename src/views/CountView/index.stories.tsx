@@ -20,7 +20,7 @@ export const Default: Story = {
     return <CountView />
   },
 }
-Default.play = async ({ args }) => {
+Default.play = async () => {
   const button = await screen.findByTestId('button');
   expect(button).toBeInTheDocument();
   expect(screen.queryByTestId('countText')?.innerHTML).toBe("0");
