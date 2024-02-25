@@ -23,7 +23,7 @@ export const Default: Story = {
 Default.play = async () => {
   const button = await screen.findByTestId('button');
   expect(button).toBeInTheDocument();
-  expect(screen.queryByTestId('countText')?.innerHTML).toBe("2");
+  expect(screen.queryByTestId('countText')?.innerHTML).toBe("0");
   await userEvent.click(button);
   expect(screen.queryByTestId('countText')?.innerHTML).toBe("1");
 }
