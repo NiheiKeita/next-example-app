@@ -1,50 +1,26 @@
-name: Node.js CI
+name: Codecov
 
 on: [pull_request]
 
 jobs:
-  build:
+  codecov:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
-      - run: npm test
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - uses: codecov/codecov-action@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/ut/cobertura-coverage.xml
-          fail_ci_if_error: true
-          flags: ut
-
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/server/cobertura-coverage.xml
-          fail_ci_if_error: true
-          flags: server
-
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/client/cobertura-coverage.xml
-          fail_ci_if_error: true
-          flags: client
-
-      - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/merged/cobertura-coverage.xml
-          fail_ci_if_error: true
-          flags: merged
