@@ -1,8 +1,8 @@
-name: Build and Deploy
+name: Codecov
 on: [pull_request]
 
 jobs:
-  test:
+  codecov:
     name: Test
     runs-on: ubuntu-latest
     steps:
