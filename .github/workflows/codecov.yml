@@ -1,24 +1,22 @@
-name: Codecov
 on: [pull_request]
 
 jobs:
   codecov:
     name: Codecov
     runs-on: ubuntu-latest
-    status:
-      project:
-        default:
-          informational: true
-      patch:
-        default:
-          informational: true
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm install
-      - name: Run Test
-        run: npm run test:coverage
+      - name: Run Test and Coverage
+        run: |
+          npm run test:coverage
+          COVERAGE=$(<coverage.txt)
+          if [ $COVERAGE -lt 90 ]; then
+            echo "Coverage is below 90% (${COVERAGE}%). Please consider improving test coverage."
+            exit 1
+          fi
       - name: Upload Coverage
         uses: codecov/codecov-action@v1
         with:
