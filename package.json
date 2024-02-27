@@ -9,14 +9,18 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@storybook/jest": "^0.2.3",
     "@storybook/testing-library": "^0.2.2",
+    "jest-environment-jsdom": "^29.7.0",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "ts-jest": "^29.1.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.16",
@@ -27,6 +31,7 @@
     "@storybook/nextjs": "^7.6.16",
     "@storybook/react": "^7.6.16",
     "@storybook/test": "^7.6.16",
+    "@testing-library/react": "^14.2.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -37,6 +42,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.14.2",
+    "jest": "^29.7.0",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "storybook": "^7.6.16",
