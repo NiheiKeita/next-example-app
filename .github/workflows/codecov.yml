@@ -5,6 +5,13 @@ jobs:
   codecov:
     name: Codecov
     runs-on: ubuntu-latest
+    status:
+      project:
+        default:
+          informational: true
+      patch:
+        default:
+          informational: true
     steps:
       - name: Checkout Repository
         uses: actions/checkout@master
