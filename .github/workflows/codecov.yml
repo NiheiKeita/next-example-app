@@ -3,7 +3,7 @@ on: [pull_request]
 
 jobs:
   codecov:
-    name: Test
+    name: Codecov
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
