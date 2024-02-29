@@ -5,9 +5,6 @@ export const useCountView = () => {
   const addCount = () => {
     setCount(count + 1);
   };
-  if(count > 10){
-    setCount(count + 10);
-  }
   return {
     count,
     addCount,
