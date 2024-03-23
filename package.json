@@ -11,7 +11,8 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "playwright": "playwright test"
   },
   "dependencies": {
     "@storybook/jest": "^0.2.3",
@@ -23,6 +24,7 @@
     "ts-jest": "^29.1.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.42.1",
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",
     "@storybook/addon-links": "^7.6.16",
