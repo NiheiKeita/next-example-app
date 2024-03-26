@@ -12,12 +12,15 @@
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "playwright": "playwright test"
+    "playwright": "playwright test",
+    "sonar": "sonar-scanner"
   },
   "dependencies": {
     "@storybook/jest": "^0.2.3",
     "@storybook/testing-library": "^0.2.2",
+    "@vitejs/plugin-react": "^4.2.1",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-sonar-reporter": "^2.0.0",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
@@ -47,8 +50,10 @@
     "jest": "^29.7.0",
     "postcss": "^8",
     "prettier": "^3.2.5",
+    "sonarqube-scanner": "^3.3.0",
     "storybook": "^7.6.16",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest-sonar-reporter": "^2.0.0"
   }
 }
