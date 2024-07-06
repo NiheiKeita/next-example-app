@@ -1,8 +1,9 @@
-import React from "react";
-import { useCountView } from "./hooks";
+import React from "react"
+import { useCountView } from "./hooks"
 
 export const CountView = React.memo(() => {
-  const { count, addCount } = useCountView();
+  const { count, addCount } = useCountView()
+
   return (
     <div>
       <p data-testid="countText">{count}</p>
@@ -10,6 +11,6 @@ export const CountView = React.memo(() => {
         カウントアップ==
       </button>
     </div>
-  );
-});
-CountView.displayName = "CountView";
+  )
+})
+CountView.displayName = "CountView"
