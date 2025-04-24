@@ -17,6 +17,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@storybook/jest": "^0.2.3",
     "@storybook/testing-library": "^0.2.2",
     "@vitejs/plugin-react": "^4.2.1",
@@ -25,8 +26,10 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.56.1",
     "react-use": "^17.5.0",
-    "ts-jest": "^29.1.2"
+    "ts-jest": "^29.1.2",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.42.1",
